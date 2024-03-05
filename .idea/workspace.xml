@@ -4,28 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19a38202-d9c5-42a7-8302-7b900e8f913f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AccountControllerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/model/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/infra/database/AccountList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/infra/database/Crud.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/infra/repository/AccountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/infra/repository/AccountRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/deposit/Deposit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/deposit/DepositImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/open_an_account/OpenAnAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/open_an_account/OpenAnAccountImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/withdrawal/Withdrawal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/withdrawal/WithdrawalImpl.java" afterDir="false" />
+    <list default="true" id="19a38202-d9c5-42a7-8302-7b900e8f913f" name="Changes" comment="implemented gateway">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/api/DepositController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/api/OpenAccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/api/WithdrawalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/DepositControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/OpenAccountControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/WithdrawalControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AccountControllerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/impl/open_an_account/OpenAnAccountImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/impl/open_account/OpenAccountImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/infra/repository/AccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/messages/AccountMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/messages/AccountMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/messages/InputMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/messages/InputMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/infra/repository/AccountRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/deposit/Deposit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/deposit/DepositImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/open_an_account/OpenAnAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/open_an_account/OpenAnAccountImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/withdrawal/Withdrawal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/withdrawal/WithdrawalImpl.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -61,7 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/sousx/IdeaProjects/banco",
+    "last_opened_file_path": "/home/sousx/IdeaProjects/banco/src/main/java/org/example/controller",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,6 +74,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/controller" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/impl/deposit" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/impl" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -110,11 +118,34 @@
       <updated>1708993868526</updated>
       <workItem from="1708993869543" duration="954000" />
       <workItem from="1709137745571" duration="4000" />
-      <workItem from="1709580406635" duration="10431000" />
+      <workItem from="1709580406635" duration="13660000" />
+      <workItem from="1709637279353" duration="9383000" />
     </task>
+    <task id="LOCAL-00001" summary="implemented packages">
+      <option name="closed" value="true" />
+      <created>1709641406549</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709641406550</updated>
+    </task>
+    <task id="LOCAL-00002" summary="implemented gateway">
+      <option name="closed" value="true" />
+      <created>1709644214526</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709644214527</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implemented packages" />
+    <MESSAGE value="implemented gateway" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented gateway" />
   </component>
 </project>
