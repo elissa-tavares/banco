@@ -3,7 +3,6 @@ package org.example.service.open.account;
 import org.example.core.model.Account;
 import org.example.core.model.Person;
 import org.example.gateway.AccountRepositoryGateway;
-import org.example.service.client.OpenAccountServiceClient;
 import org.example.security.api.ExistingAccount;
 
 public class OpenAccountImpl implements OpenAccountServiceClient {

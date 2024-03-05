@@ -1,8 +1,8 @@
 package org.example;
 
-import org.example.service.client.DepositServiceClient;
-import org.example.service.client.OpenAccountServiceClient;
-import org.example.service.client.WithdrawalServiceClient;
+import org.example.service.deposit.DepositServiceClient;
+import org.example.service.open.account.OpenAccountServiceClient;
+import org.example.service.withdrawal.WithdrawalServiceClient;
 import org.example.service.deposit.DepositImpl;
 import org.example.service.open.account.OpenAccountImpl;
 import org.example.service.withdrawal.WithdrawalImpl;

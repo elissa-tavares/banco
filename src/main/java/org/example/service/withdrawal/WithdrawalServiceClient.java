@@ -1,4 +1,4 @@
-package org.example.service.client;
+package org.example.service.withdrawal;
 
 import org.example.core.Withdrawal;
 

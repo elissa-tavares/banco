@@ -2,7 +2,6 @@ package org.example.service.deposit;
 
 import org.example.core.model.Account;
 import org.example.gateway.AccountRepositoryGateway;
-import org.example.service.client.DepositServiceClient;
 import org.example.security.api.ExistingAccount;
 
 import java.math.BigDecimal;

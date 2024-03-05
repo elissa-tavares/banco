@@ -1,4 +1,4 @@
-package org.example.service.client;
+package org.example.service.open.account;
 
 import org.example.core.OpenAnAccount;
 

@@ -1,4 +1,4 @@
-package org.example.service.client;
+package org.example.service.deposit;
 
 import org.example.core.Deposit;
 
