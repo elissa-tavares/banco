@@ -1,7 +1,7 @@
-package org.example.service.deposit;
+package org.example.core.withdrawal;
 
 import java.math.BigDecimal;
 
-public interface Deposit {
+public interface Withdrawal {
     boolean execute(BigDecimal value, Long accountNumber);
 }

@@ -1,11 +1,12 @@
-package org.example.service.deposit;
+package org.example.impl.deposit;
 
+import org.example.core.deposit.Deposit;
 import org.example.core.model.Account;
 import org.example.infra.repository.AccountRepository;
 
 import java.math.BigDecimal;
 
-public class DepositImpl implements Deposit{
+public class DepositImpl implements Deposit {
     private final AccountRepository accountRepository;
 
     public DepositImpl(AccountRepository accountRepository) {
@@ -16,7 +17,7 @@ public class DepositImpl implements Deposit{
     public boolean execute(BigDecimal value, Long accountNumber) {
         Account account = accountRepository.read(accountNumber);
 
-        if(account == null || value.compareTo(BigDecimal.ZERO) <= 0 ){ //se o valor recebido for menor que 0
+        if(value.compareTo(BigDecimal.ZERO) <= 0 ){ //se o valor recebido for menor que 0
             return false;
         } else {
             BigDecimal finalBalance = account.getAccountBalance().add(value);

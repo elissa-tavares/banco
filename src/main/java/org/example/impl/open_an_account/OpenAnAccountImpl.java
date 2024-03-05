@@ -1,6 +1,7 @@
-package org.example.service.open_an_account;
+package org.example.impl.open_an_account;
 
 import org.example.core.model.Account;
+import org.example.core.open_an_account.OpenAnAccount;
 import org.example.infra.repository.AccountRepository;
 
 public class OpenAnAccountImpl implements OpenAnAccount {
@@ -12,16 +13,10 @@ public class OpenAnAccountImpl implements OpenAnAccount {
 
     @Override
     public boolean execute(Long accountNumber) {
-        boolean notExistingAccount = accountRepository.validAccountNumber(accountNumber);
-
-        if (notExistingAccount) {
             Account account = new Account(accountNumber);
             account.setAccountNumber(accountNumber);
             accountRepository.create(account);
             //System.out.println(account);
             return true;
-        } else {
-            return false;
-        }
     }
 }

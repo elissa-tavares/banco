@@ -6,7 +6,6 @@ import org.example.infra.database.Crud;
 
 public class AccountRepositoryImpl implements AccountRepository{
 
-    private static AccountRepositoryImpl instance;
     private final Crud accountList;
 
     public AccountRepositoryImpl(Crud accountList) {
@@ -20,8 +19,8 @@ public class AccountRepositoryImpl implements AccountRepository{
     }
 
     @Override
-    public boolean validAccountNumber(Long accountNumber){
-        return read(accountNumber) == null;
+    public boolean existingAccount(Long accountNumber){
+        return read(accountNumber) != null;
 
     }
 

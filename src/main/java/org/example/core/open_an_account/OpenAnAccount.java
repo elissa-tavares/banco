@@ -1,4 +1,4 @@
-package org.example.service.open_an_account;
+package org.example.core.open_an_account;
 
 import java.math.BigDecimal;
 

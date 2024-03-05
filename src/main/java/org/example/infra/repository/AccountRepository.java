@@ -6,7 +6,7 @@ import org.example.infra.database.Crud;
 public interface AccountRepository extends Crud {
     void create(Account account);
 
-    boolean validAccountNumber(Long accountNumber);
+    boolean existingAccount(Long accountNumber);
 
     Account read(Long accountNumber);
 
