@@ -22,23 +22,47 @@ import org.example.security.impl.ExistingByCPFImpl;
 
 import java.util.Scanner;
 
+/**
+ * This class serves as the entry point for the application, demonstrating a layered architecture
+ * for managing bank accounts.
+ */
 public class Main {
+
     public static void main(String[] args) {
+        /**
+         * Data Access Layer
+         */
         AccountRepositoryGateway accountRepositoryGateway = new AccountRepositoryImpl(AccountList.getInstance(), PersonList.getInstance());
+
+        /**
+         * Security Layer
+         */
         ExistingAccount<Integer> existingAccountByNumber = new ExistingByAccountNumberImpl(accountRepositoryGateway);
         ExistingAccount<String> existingAccountByCPF = new ExistingByCPFImpl(accountRepositoryGateway);
 
+        /**
+         * Service Layer
+         */
         DepositServiceClient depositServiceClient = new DepositImpl(accountRepositoryGateway, existingAccountByNumber);
         OpenAccountServiceClient openAnAccountServiceClient = new OpenAccountImpl(accountRepositoryGateway, existingAccountByCPF);
         WithdrawalServiceClient withdrawalServiceClient = new WithdrawalImpl(accountRepositoryGateway, existingAccountByNumber);
 
+        /**
+         * Additional Dependencies
+         */
         OperationResult operationResult = new OperationResultImpl();
         Scanner scanner = new Scanner(System.in);
 
+        /**
+         * Controller Layer
+         */
         Controller depositController = new DepositControllerImpl(depositServiceClient, operationResult, scanner);
         Controller openAccountController = new OpenAccountControllerImpl(openAnAccountServiceClient, operationResult, scanner);
         Controller withdrawalController = new WithdrawalControllerImpl(withdrawalServiceClient, operationResult, scanner);
 
+        /**
+         * Application Flow
+         */
         openAccountController.execute();
         depositController.execute();
         withdrawalController.execute();
