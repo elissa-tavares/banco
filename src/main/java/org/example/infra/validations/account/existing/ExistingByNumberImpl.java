@@ -1,7 +1,7 @@
-package org.example.validations.account.existing;
+package org.example.infra.validations.account.existing;
 
 import org.example.gateway.AccountRepositoryGateway;
-import org.example.validations.account.Existing;
+import org.example.infra.validations.account.Existing;
 
 public class ExistingByNumberImpl implements Existing<Long> {
     private final AccountRepositoryGateway accountRepositoryGateway;

@@ -1,6 +1,6 @@
-package org.example.messages;
+package org.example.infra.messages;
 
-import org.example.messages.colors.Color;
+import org.example.infra.messages.colors.Color;
 
 public enum InputMessage {
     ENTER_VALUE(Color.YELLOW.get() + "Enter the value: " + Color.RESET.get()),

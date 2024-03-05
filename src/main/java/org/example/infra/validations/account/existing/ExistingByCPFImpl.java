@@ -1,6 +1,6 @@
-package org.example.validations.account.existing;
+package org.example.infra.validations.account.existing;
 
-import org.example.validations.account.Existing;
+import org.example.infra.validations.account.Existing;
 
 public class ExistingByCPFImpl implements Existing<String> {
     @Override

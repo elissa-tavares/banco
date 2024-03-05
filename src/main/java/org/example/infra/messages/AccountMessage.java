@@ -1,6 +1,6 @@
-package org.example.messages;
+package org.example.infra.messages;
 
-import org.example.messages.colors.Color;
+import org.example.infra.messages.colors.Color;
 
 public enum AccountMessage {
     ACCOUNT_ALREADY_EXISTS(Color.RED.get() + "Account already exists" + Color.RESET.get()),

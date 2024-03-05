@@ -1,7 +1,7 @@
-package org.example.controller.impl;
+package org.example.infra.controller.impl;
 
-import org.example.controller.api.OperationResult;
-import org.example.messages.AccountMessage;
+import org.example.infra.controller.api.OperationResult;
+import org.example.infra.messages.AccountMessage;
 
 public class OperationResultImpl implements OperationResult {
     @Override

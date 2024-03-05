@@ -1,10 +1,10 @@
 package org.example.impl.open.account;
 
 import org.example.core.model.Account;
-import org.example.core.open_an_account.OpenAnAccount;
 import org.example.gateway.AccountRepositoryGateway;
+import org.example.gateway.OpenAccountImplGateway;
 
-public class OpenAccountImpl implements OpenAnAccount {
+public class OpenAccountImpl implements OpenAccountImplGateway {
     private final AccountRepositoryGateway accountRepositoryGateway;
 
     public OpenAccountImpl(AccountRepositoryGateway accountRepository) {

@@ -1,12 +1,12 @@
 package org.example.impl.withdrawal;
 
 import org.example.core.model.Account;
-import org.example.core.withdrawal.Withdrawal;
 import org.example.gateway.AccountRepositoryGateway;
+import org.example.gateway.WithdrawalImplGateway;
 
 import java.math.BigDecimal;
 
-public class WithdrawalImpl implements Withdrawal {
+public class WithdrawalImpl implements WithdrawalImplGateway {
     private final AccountRepositoryGateway accountRepositoryGateway;
 
     public WithdrawalImpl(AccountRepositoryGateway accountRepositoryGateway) {

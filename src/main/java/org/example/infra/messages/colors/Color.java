@@ -1,4 +1,4 @@
-package org.example.messages.colors;
+package org.example.infra.messages.colors;
 
 public enum Color {
     RESET("\u001B[0m"),

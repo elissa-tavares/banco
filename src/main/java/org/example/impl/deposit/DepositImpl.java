@@ -1,12 +1,12 @@
 package org.example.impl.deposit;
 
-import org.example.core.deposit.Deposit;
 import org.example.core.model.Account;
 import org.example.gateway.AccountRepositoryGateway;
+import org.example.gateway.DepositImplGateway;
 
 import java.math.BigDecimal;
 
-public class DepositImpl implements Deposit {
+public class DepositImpl implements DepositImplGateway {
     private final AccountRepositoryGateway accountRepositoryGateway;
 
     public DepositImpl(AccountRepositoryGateway accountRepositoryGateway) {
