@@ -1,7 +1,7 @@
-package org.example.infra.database.base;
+package org.example.infra.data.base;
 
 import org.example.core.model.Person;
-import org.example.infra.database.api.CRUD.CRUDPerson;
+import org.example.infra.data.CRUD.CRUDPerson;
 
 import java.util.ArrayList;
 import java.util.List;

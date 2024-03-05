@@ -1,4 +1,4 @@
-package org.example.infra.database.api.CRUD;
+package org.example.infra.data.CRUD;
 
 import java.util.List;
 

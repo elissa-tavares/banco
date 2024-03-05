@@ -3,8 +3,8 @@ package org.example.infra.repository;
 import org.example.core.model.Account;
 import org.example.core.model.Person;
 import org.example.gateway.AccountRepositoryGateway;
-import org.example.infra.database.api.CRUD.CRUD;
-import org.example.infra.database.api.CRUD.CRUDPerson;
+import org.example.infra.data.CRUD.CRUD;
+import org.example.infra.data.CRUD.CRUDPerson;
 
 import java.util.List;
 

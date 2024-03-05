@@ -1,6 +1,6 @@
-package org.example.infra.repository.api;
+package org.example.infra.repository;
 
-import org.example.infra.database.api.CRUD.CRUD;
+import org.example.infra.data.CRUD.CRUD;
 
 
 public interface Repository<T> extends CRUD<T> {
