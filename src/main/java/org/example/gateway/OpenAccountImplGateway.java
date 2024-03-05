@@ -1,6 +1,7 @@
 package org.example.gateway;
 
-import org.example.core.open_an_account.OpenAnAccount;
+import org.example.core.OpenAnAccount;
+
 
 public interface OpenAccountImplGateway extends OpenAnAccount {
 }

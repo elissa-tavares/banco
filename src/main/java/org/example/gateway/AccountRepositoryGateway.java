@@ -1,14 +1,7 @@
 package org.example.gateway;
 
 import org.example.core.model.Account;
-import org.example.infra.database.Crud;
+import org.example.infra.repository.api.Repository;
 
-public interface AccountRepositoryGateway extends Crud {
-    void create(Account account);
-
-    boolean existingAccount(Long accountNumber);
-
-    Account read(Long accountNumber);
-
-    void delete(Account account);
+public interface AccountRepositoryGateway extends Repository<Account> {
 }

@@ -3,30 +3,30 @@ package org.example.infra.controller.impl;
 import org.example.gateway.WithdrawalImplGateway;
 import org.example.infra.controller.api.Controller;
 import org.example.infra.controller.api.OperationResult;
-import org.example.infra.messages.AccountMessage;
-import org.example.infra.messages.InputMessage;
-import org.example.infra.validations.account.Existing;
+import org.example.app.messages.AccountMessage;
+import org.example.app.messages.InputMessage;
+import org.example.security.api.ExistingAccount;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class WithdrawalControllerImpl implements Controller {
     private final WithdrawalImplGateway withdrawalGateway;
-    private final Existing<Long> existingAccount;
+    private final ExistingAccount<Integer> existingAccountByNumber;
     private final OperationResult operationResult;
     private final Scanner scanner;
 
-    public WithdrawalControllerImpl(WithdrawalImplGateway withdrawal, Existing<Long> existingAccount, OperationResult operationResult, Scanner scanner) {
+    public WithdrawalControllerImpl(WithdrawalImplGateway withdrawal, ExistingAccount<Integer> existingAccount, OperationResult operationResult, Scanner scanner) {
         this.withdrawalGateway = withdrawal;
-        this.existingAccount = existingAccount;
+        this.existingAccountByNumber = existingAccount;
         this.operationResult = operationResult;
         this.scanner = scanner;
     }
 
     @Override
     public void execute() {
-        Long accountNumber = inputAccountNumber();
-        boolean existing = existingAccount.existing(accountNumber);
+        Integer accountNumber = inputAccountNumber();
+        boolean existing = existingAccountByNumber.existing(accountNumber);
 
         if (existing) {
             BigDecimal value = inputValue();
@@ -42,8 +42,8 @@ public class WithdrawalControllerImpl implements Controller {
         return scanner.nextBigDecimal();
     }
 
-    private Long inputAccountNumber() {
+    private Integer inputAccountNumber() {
         InputMessage.ENTER_ACCOUNT_NUMBER.print();
-        return scanner.nextLong();
+        return scanner.nextInt();
     }
 }

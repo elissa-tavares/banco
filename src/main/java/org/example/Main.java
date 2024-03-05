@@ -10,30 +10,33 @@ import org.example.infra.controller.impl.DepositControllerImpl;
 import org.example.infra.controller.impl.OpenAccountControllerImpl;
 import org.example.infra.controller.impl.OperationResultImpl;
 import org.example.infra.controller.impl.WithdrawalControllerImpl;
-import org.example.infra.database.AccountList;
+import org.example.infra.database.base.AccountList;
+import org.example.infra.database.base.PersonList;
 import org.example.infra.repository.AccountRepositoryImpl;
-import org.example.infra.validations.account.Existing;
-import org.example.infra.validations.account.existing.ExistingByNumberImpl;
-import org.example.impl.deposit.DepositImpl;
-import org.example.impl.open.account.OpenAccountImpl;
-import org.example.impl.withdrawal.WithdrawalImpl;
+import org.example.security.api.ExistingAccount;
+import org.example.security.impl.ExistingByAccountNumberImpl;
+import org.example.security.impl.ExistingByCPFImpl;
+import org.example.service.deposit.DepositImpl;
+import org.example.service.open.account.OpenAccountImpl;
+import org.example.service.withdrawal.WithdrawalImpl;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        AccountRepositoryGateway accountRepositoryGateway = new AccountRepositoryImpl(AccountList.getInstance());
+        AccountRepositoryGateway accountRepositoryGateway = new AccountRepositoryImpl(AccountList.getInstance(), PersonList.getInstance());
 
         DepositImplGateway deposit = new DepositImpl(accountRepositoryGateway);
         OpenAccountImplGateway openAnAccount = new OpenAccountImpl(accountRepositoryGateway);
         WithdrawalImplGateway withdrawal = new WithdrawalImpl(accountRepositoryGateway);
 
-        Existing<Long> existingAccountByNumber = new ExistingByNumberImpl(accountRepositoryGateway);
+        ExistingAccount<Integer> existingAccountByNumber = new ExistingByAccountNumberImpl(accountRepositoryGateway);
+        ExistingAccount<String> existingAccountByCPF = new ExistingByCPFImpl(accountRepositoryGateway);
         OperationResult operationResult = new OperationResultImpl();
         Scanner scanner = new Scanner(System.in);
 
         Controller depositController = new DepositControllerImpl(deposit, existingAccountByNumber, operationResult, scanner);
-        Controller openAccountController = new OpenAccountControllerImpl(openAnAccount, existingAccountByNumber, operationResult, scanner);
+        Controller openAccountController = new OpenAccountControllerImpl(openAnAccount, existingAccountByCPF, operationResult, scanner);
         Controller withdrawalController = new WithdrawalControllerImpl(withdrawal, existingAccountByNumber, operationResult, scanner);
 
         openAccountController.execute();

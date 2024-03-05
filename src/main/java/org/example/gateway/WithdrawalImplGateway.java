@@ -1,7 +1,6 @@
 package org.example.gateway;
 
-import org.example.core.withdrawal.Withdrawal;
-
+import org.example.core.Withdrawal;
 
 public interface WithdrawalImplGateway extends Withdrawal {
 }

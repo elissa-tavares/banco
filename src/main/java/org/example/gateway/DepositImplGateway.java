@@ -1,7 +1,6 @@
 package org.example.gateway;
 
-import org.example.core.deposit.Deposit;
-
+import org.example.core.Deposit;
 
 public interface DepositImplGateway extends Deposit {
 }
