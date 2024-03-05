@@ -5,27 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19a38202-d9c5-42a7-8302-7b900e8f913f" name="Changes" comment="implemented gateway">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/api/DepositController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/api/OpenAccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/api/WithdrawalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/DepositControllerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/OpenAccountControllerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/WithdrawalControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/api/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/api/OperationResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/OperationResultImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/validations/account/Existing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/validations/account/existing/ExistingByCPFImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/validations/account/existing/ExistingByNumberImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AccountController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AccountControllerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/impl/open_an_account/OpenAnAccountImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/impl/open_account/OpenAccountImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/infra/repository/AccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/api/DepositController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/api/OpenAccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/api/WithdrawalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/DepositControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/DepositControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/OpenAccountControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/OpenAccountControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/WithdrawalControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/impl/WithdrawalControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/impl/open_account/OpenAccountImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/impl/open/account/OpenAccountImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/messages/AccountMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/messages/AccountMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/messages/InputMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/messages/InputMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/infra/repository/AccountRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/deposit/Deposit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/deposit/DepositImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/open_an_account/OpenAnAccount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/open_an_account/OpenAnAccountImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/withdrawal/Withdrawal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/withdrawal/WithdrawalImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/validations/dto/account_number/ExistingAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/validations/dto/account_number/ExistingAccountImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/validations/dto/value/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/validations/value/Value.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/validations/dto/value/ValueImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/validations/value/ValueImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/api/DepositController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/api/DepositController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/api/OpenAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/api/OpenAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/api/WithdrawalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/api/WithdrawalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/impl/DepositControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/impl/DepositControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/impl/OpenAccountControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/impl/OpenAccountControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/impl/WithdrawalControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controller/impl/WithdrawalControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/messages/AccountMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/messages/AccountMessage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +43,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -119,7 +126,7 @@
       <workItem from="1708993869543" duration="954000" />
       <workItem from="1709137745571" duration="4000" />
       <workItem from="1709580406635" duration="13660000" />
-      <workItem from="1709637279353" duration="9383000" />
+      <workItem from="1709637279353" duration="14287000" />
     </task>
     <task id="LOCAL-00001" summary="implemented packages">
       <option name="closed" value="true" />

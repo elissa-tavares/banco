@@ -8,7 +8,7 @@ public enum AccountMessage {
     ACCOUNT_OPEN_FAILURE(Color.RED.get() + "Failed to open the account" + Color.RESET.get()),
     ACCOUNT_NOT_EXIST(Color.RED.get() + "The account does not exist" + Color.RESET.get()),
     DEPOSIT_SUCCESS(Color.GREEN.get() + "Deposit successful!" + Color.RESET.get()),
-    DEPOSIT_FAILURE(Color.RED.get() + "Failed to deposit" + Color.RESET.get()),
+    DEPOSIT_FAILURE(Color.RED.get() + "Failed to execute" + Color.RESET.get()),
     WITHDRAWAL_SUCCESS(Color.GREEN.get() + "Withdrawal successful!" + Color.RESET.get()),
     WITHDRAWAL_FAILURE(Color.RED.get() + "Failed to withdraw" + Color.RESET.get());
 

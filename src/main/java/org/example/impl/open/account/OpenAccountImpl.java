@@ -1,4 +1,4 @@
-package org.example.impl.open_account;
+package org.example.impl.open.account;
 
 import org.example.core.model.Account;
 import org.example.core.open_an_account.OpenAnAccount;

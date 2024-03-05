@@ -1,36 +1,39 @@
 package org.example.controller.impl;
 
-import org.example.controller.api.DepositController;
+import org.example.controller.api.Controller;
+import org.example.controller.api.OperationResult;
 import org.example.core.deposit.Deposit;
 import org.example.messages.AccountMessage;
 import org.example.messages.InputMessage;
-import org.example.validations.dto.account_number.ExistingAccount;
+import org.example.validations.account.Existing;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class DepositControllerImpl implements DepositController {
+public class DepositControllerImpl implements Controller {
 
     private final Deposit deposit;
-    private final ExistingAccount existingAccount;
+    private final Existing<Long> existingAccount;
+    private final OperationResult operationResult;
     private final Scanner scanner;
 
-    public DepositControllerImpl(Deposit deposit, ExistingAccount existingAccount, Scanner scanner) {
+    public DepositControllerImpl(Deposit deposit, Existing<Long> existingAccount, OperationResult operationResult, Scanner scanner) {
         this.deposit = deposit;
         this.existingAccount = existingAccount;
+        this.operationResult = operationResult;
         this.scanner = scanner;
     }
 
 
     @Override
-    public void deposit() {
+    public void execute() {
         Long accountNumber = inputAccountNumber();
-        boolean existing = existingAccount.existingAccount(accountNumber);
+        boolean existing = existingAccount.existing(accountNumber);
 
         if (existing) {
             BigDecimal value = inputValue();
             boolean successfully = deposit.execute(value, accountNumber);
-            printOperationResult(successfully, AccountMessage.DEPOSIT_SUCCESS, AccountMessage.DEPOSIT_FAILURE);
+            operationResult.message(successfully, AccountMessage.DEPOSIT_SUCCESS, AccountMessage.DEPOSIT_FAILURE);
         } else {
             AccountMessage.ACCOUNT_NOT_EXIST.print();
         }
@@ -44,13 +47,5 @@ public class DepositControllerImpl implements DepositController {
     private Long inputAccountNumber() {
         InputMessage.ENTER_ACCOUNT_NUMBER.print();
         return scanner.nextLong();
-    }
-
-    private void printOperationResult(boolean success, AccountMessage successMessage, AccountMessage failureMessage) {
-        printMessage(success ? successMessage : failureMessage);
-    }
-
-    private void printMessage(AccountMessage message) {
-        message.print();
     }
 }
