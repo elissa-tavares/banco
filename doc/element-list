@@ -1,0 +1,17 @@
+org.example
+org.example.app
+org.example.app.messages
+org.example.app.messages.colors
+org.example.core
+org.example.core.model
+org.example.gateway
+org.example.infra.controller.api
+org.example.infra.controller.impl
+org.example.infra.data.base
+org.example.infra.data.CRUD
+org.example.infra.repository
+org.example.security.api
+org.example.security.impl
+org.example.service.deposit
+org.example.service.open.account
+org.example.service.withdrawal
