@@ -8,20 +8,21 @@ import org.example.core.open_an_account.OpenAnAccount;
 import org.example.core.withdrawal.Withdrawal;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class AccountControllerImpl implements AccountController {
 
-    private final Deposit depositImpl;
-    private final OpenAnAccount openAnAccountImpl;
-    private final Withdrawal withdrawalImpl;
+    private final Deposit deposit;
+    private final OpenAnAccount openAnAccount;
+    private final Withdrawal withdrawal;
     private final ExistingAccount existingAccount;
     private final Scanner scanner;
 
     public AccountControllerImpl(Deposit depositImpl, OpenAnAccount openAnAccountImpl, Withdrawal withdrawalImpl, ExistingAccount existingAccount, Scanner scanner) {
-        this.depositImpl = depositImpl;
-        this.openAnAccountImpl = openAnAccountImpl;
-        this.withdrawalImpl = withdrawalImpl;
+        this.deposit = depositImpl;
+        this.openAnAccount = openAnAccountImpl;
+        this.withdrawal = withdrawalImpl;
         this.existingAccount = existingAccount;
         this.scanner = scanner;
     }
@@ -34,8 +35,8 @@ public class AccountControllerImpl implements AccountController {
         if (openAccount) {
             AccountMessage.ACCOUNT_ALREADY_EXISTS.print();
         } else {
-            boolean successfully = openAnAccountImpl.execute(accountNumber);
-            (successfully ? AccountMessage.ACCOUNT_OPEN_SUCCESS : AccountMessage.ACCOUNT_OPEN_FAILURE).print();
+            boolean successfully = openAnAccount.execute(accountNumber);
+            printOperationResult(successfully, AccountMessage.ACCOUNT_OPEN_SUCCESS, AccountMessage.ACCOUNT_OPEN_FAILURE);
         }
 
     }
@@ -47,7 +48,8 @@ public class AccountControllerImpl implements AccountController {
 
         if (existing) {
             BigDecimal value = inputValue();
-            (depositImpl.execute(value, accountNumber) ? AccountMessage.DEPOSIT_SUCCESS : AccountMessage.DEPOSIT_FAILURE).print();
+            boolean successfully = deposit.execute(value, accountNumber);
+            printOperationResult(successfully, AccountMessage.DEPOSIT_SUCCESS, AccountMessage.DEPOSIT_FAILURE);
         } else {
             AccountMessage.ACCOUNT_NOT_EXIST.print();
         }
@@ -60,7 +62,8 @@ public class AccountControllerImpl implements AccountController {
 
         if (existing) {
             BigDecimal value = inputValue();
-            (withdrawalImpl.execute(value, accountNumber) ? AccountMessage.WITHDRAWAL_SUCCESS : AccountMessage.WITHDRAWAL_FAILURE).print();
+            boolean successfully = withdrawal.execute(value, accountNumber);
+            printOperationResult(successfully, AccountMessage.WITHDRAWAL_SUCCESS, AccountMessage.WITHDRAWAL_FAILURE);
         } else {
             AccountMessage.ACCOUNT_NOT_EXIST.print();
         }
@@ -76,4 +79,11 @@ public class AccountControllerImpl implements AccountController {
         return scanner.nextLong();
     }
 
+    private void printOperationResult(boolean success, AccountMessage successMessage, AccountMessage failureMessage) {
+        printMessage(success ? successMessage : failureMessage);
+    }
+
+    private void printMessage(AccountMessage message) {
+        message.print();
+    }
 }

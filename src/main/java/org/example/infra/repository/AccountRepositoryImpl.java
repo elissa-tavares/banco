@@ -1,10 +1,11 @@
 package org.example.infra.repository;
 
 import org.example.core.model.Account;
+import org.example.gateway.AccountRepositoryGateway;
 import org.example.infra.database.Crud;
 
 
-public class AccountRepositoryImpl implements AccountRepository{
+public class AccountRepositoryImpl implements AccountRepositoryGateway {
 
     private final Crud accountList;
 

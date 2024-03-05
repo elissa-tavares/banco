@@ -2,20 +2,20 @@ package org.example.impl.deposit;
 
 import org.example.core.deposit.Deposit;
 import org.example.core.model.Account;
-import org.example.infra.repository.AccountRepository;
+import org.example.gateway.AccountRepositoryGateway;
 
 import java.math.BigDecimal;
 
 public class DepositImpl implements Deposit {
-    private final AccountRepository accountRepository;
+    private final AccountRepositoryGateway accountRepositoryGateway;
 
-    public DepositImpl(AccountRepository accountRepository) {
-        this.accountRepository = accountRepository;
+    public DepositImpl(AccountRepositoryGateway accountRepositoryGateway) {
+        this.accountRepositoryGateway = accountRepositoryGateway;
     }
 
     @Override
     public boolean execute(BigDecimal value, Long accountNumber) {
-        Account account = accountRepository.read(accountNumber);
+        Account account = accountRepositoryGateway.read(accountNumber);
 
         if(value.compareTo(BigDecimal.ZERO) <= 0 ){ //se o valor recebido for menor que 0
             return false;

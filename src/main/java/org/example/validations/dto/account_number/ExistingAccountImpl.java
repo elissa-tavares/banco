@@ -1,15 +1,14 @@
 package org.example.validations.dto.account_number;
 
-import org.example.infra.repository.AccountRepository;
-import org.example.validations.dto.account_number.ExistingAccount;
+import org.example.gateway.AccountRepositoryGateway;
 
 public class ExistingAccountImpl implements ExistingAccount {
-    private final AccountRepository accountRepository;
+    private final AccountRepositoryGateway accountRepositoryGateway;
 
-    public ExistingAccountImpl(AccountRepository accountRepository) {
-        this.accountRepository = accountRepository;
+    public ExistingAccountImpl(AccountRepositoryGateway accountRepositoryGateway) {
+        this.accountRepositoryGateway = accountRepositoryGateway;
     }
     public boolean existingAccount(Long accountNumber){
-        return accountRepository.existingAccount(accountNumber);
+        return accountRepositoryGateway.existingAccount(accountNumber);
     }
 }
