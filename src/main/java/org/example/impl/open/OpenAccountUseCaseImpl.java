@@ -2,14 +2,15 @@
  * This class implements the `OpenAccountServiceClient` interface, providing a service
  * for opening new accounts.
  */
-package org.example.service.open.account;
+package org.example.impl.open;
 
+import org.example.adapters.service.OpenAccountServiceClient;
 import org.example.core.model.Account;
 import org.example.core.model.Person;
-import org.example.gateway.AccountRepositoryGateway;
+import org.example.adapters.gateway.AccountRepositoryGateway;
 import org.example.security.api.ExistingAccount;
 
-public class OpenAccountImpl implements OpenAccountServiceClient {
+public class OpenAccountUseCaseImpl implements OpenAccountServiceClient {
 
     /**
      * Reference to the `AccountRepositoryGateway` for interacting with account data.
@@ -22,12 +23,12 @@ public class OpenAccountImpl implements OpenAccountServiceClient {
     private final ExistingAccount<String> existingAccountByCPF;
 
     /**
-     * Constructor for OpenAccountImpl.
+     * Constructor for OpenAccountUseCaseImpl.
      *
      * @param accountRepository      An instance of `AccountRepositoryGateway` for account data access.
      * @param existingAccount        An instance of `ExistingAccount` for account existence check by CPF.
      */
-    public OpenAccountImpl(AccountRepositoryGateway accountRepository, ExistingAccount<String> existingAccount) {
+    public OpenAccountUseCaseImpl(AccountRepositoryGateway accountRepository, ExistingAccount<String> existingAccount) {
         this.accountRepositoryGateway = accountRepository;
         this.existingAccountByCPF = existingAccount;
     }

@@ -3,7 +3,7 @@
  * It extends the {@link org.example.infra.repository.Repository} interface, inheriting its generic methods
  * for data access operations on Account objects.
  */
-package org.example.gateway;
+package org.example.adapters.gateway;
 
 import org.example.core.model.Account;
 import org.example.infra.repository.Repository;

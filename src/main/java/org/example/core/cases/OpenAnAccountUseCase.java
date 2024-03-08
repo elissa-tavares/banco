@@ -2,11 +2,11 @@
  * This interface defines the contract for opening a new bank account.
  * Classes that implement this interface are responsible for carrying out the account creation logic.
  */
-package org.example.core;
+package org.example.core.cases;
 
 import org.example.core.model.Person;
 
-public interface OpenAnAccount {
+public interface OpenAnAccountUseCase {
 
     /**
      * Executes the logic to open a new account for the provided Person object (account holder).

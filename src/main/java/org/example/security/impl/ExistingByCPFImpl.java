@@ -4,7 +4,7 @@
  */
 package org.example.security.impl;
 
-import org.example.gateway.AccountRepositoryGateway;
+import org.example.adapters.gateway.AccountRepositoryGateway;
 import org.example.security.api.ExistingAccount;
 
 public class ExistingByCPFImpl implements ExistingAccount<String> {

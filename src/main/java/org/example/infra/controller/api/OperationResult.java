@@ -4,7 +4,7 @@
  */
 package org.example.infra.controller.api;
 
-import org.example.app.messages.AccountMessage;
+import org.example.application.messages.AccountMessage;
 
 public interface OperationResult {
 

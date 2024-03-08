@@ -6,7 +6,7 @@ package org.example.infra.repository;
 
 import org.example.core.model.Account;
 import org.example.core.model.Person;
-import org.example.gateway.AccountRepositoryGateway;
+import org.example.adapters.gateway.AccountRepositoryGateway;
 import org.example.infra.data.CRUD.CRUD;
 import org.example.infra.data.CRUD.CRUDPerson;
 

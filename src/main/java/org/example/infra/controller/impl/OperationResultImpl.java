@@ -4,7 +4,7 @@
 package org.example.infra.controller.impl;
 
 import org.example.infra.controller.api.OperationResult;
-import org.example.app.messages.AccountMessage;
+import org.example.application.messages.AccountMessage;
 
 public class OperationResultImpl implements OperationResult {
 

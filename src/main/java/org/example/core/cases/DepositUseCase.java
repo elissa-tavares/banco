@@ -2,11 +2,11 @@
  * This interface defines the contract for performing a deposit operation on a bank account.
  * Classes that implement this interface are responsible for carrying out the deposit logic.
  */
-package org.example.core;
+package org.example.core.cases;
 
 import java.math.BigDecimal;
 
-public interface Deposit {
+public interface DepositUseCase {
 
     /**
      * Executes a deposit operation, adding the specified value to the balance of the designated account.

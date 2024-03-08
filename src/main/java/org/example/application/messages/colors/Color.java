@@ -1,4 +1,4 @@
-package org.example.app.messages.colors;
+package org.example.application.messages.colors;
 
 /**
  * This enum defines a set of ANSI escape codes for common colors used in terminal output.

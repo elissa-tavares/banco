@@ -2,15 +2,16 @@
  * This class implements the `WithdrawalServiceClient` interface, providing a service for withdrawing funds
  * from an account.
  */
-package org.example.service.withdrawal;
+package org.example.impl.withdrawal;
 
+import org.example.adapters.service.WithdrawalServiceClient;
 import org.example.core.model.Account;
-import org.example.gateway.AccountRepositoryGateway;
+import org.example.adapters.gateway.AccountRepositoryGateway;
 import org.example.security.api.ExistingAccount;
 
 import java.math.BigDecimal;
 
-public class WithdrawalImpl implements WithdrawalServiceClient {
+public class WithdrawalUseCaseImpl implements WithdrawalServiceClient {
 
     /**
      * Reference to the `AccountRepositoryGateway` for interacting with account data.
@@ -23,12 +24,12 @@ public class WithdrawalImpl implements WithdrawalServiceClient {
     private final ExistingAccount<Integer> existingAccountByNumber;
 
     /**
-     * Constructor for WithdrawalImpl.
+     * Constructor for WithdrawalUseCaseImpl.
      *
      * @param accountRepositoryGateway An instance of `AccountRepositoryGateway` for account data access.
      * @param existingAccount         An instance of `ExistingAccount` for account existence check.
      */
-    public WithdrawalImpl(AccountRepositoryGateway accountRepositoryGateway, ExistingAccount<Integer> existingAccount) {
+    public WithdrawalUseCaseImpl(AccountRepositoryGateway accountRepositoryGateway, ExistingAccount<Integer> existingAccount) {
         this.accountRepositoryGateway = accountRepositoryGateway;
         this.existingAccountByNumber = existingAccount;
     }
@@ -46,7 +47,7 @@ public class WithdrawalImpl implements WithdrawalServiceClient {
         boolean existing = existingAccountByNumber.existing(accountNumber);
         Account account = accountRepositoryGateway.read(accountNumber);
         if (account == null || account.getAccountBalance().compareTo(value) < 0 || !existing) {
-            return false; // Withdrawal fails if account doesn't exist, has insufficient balance, or check fails
+            return false; // WithdrawalUseCase fails if account doesn't exist, has insufficient balance, or check fails
         }
 
         // Update account balance and persist the changes
@@ -54,7 +55,7 @@ public class WithdrawalImpl implements WithdrawalServiceClient {
         account.setAccountBalance(finalBalance);
         // Optional: System.out.println(account); // For debugging or logging purposes
 
-        return true; // Withdrawal successful
+        return true; // WithdrawalUseCase successful
     }
 }
 

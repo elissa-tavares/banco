@@ -2,9 +2,9 @@
  * This enum defines predefined messages related to account operations,
  * along with color formatting for enhanced readability in the console.
  */
-package org.example.app.messages;
+package org.example.application.messages;
 
-import org.example.app.messages.colors.Color;
+import org.example.application.messages.colors.Color;
 
 public enum AccountMessage {
 
@@ -31,7 +31,7 @@ public enum AccountMessage {
     /**
      * Indicates that a deposit operation has been successful.
      */
-    DEPOSIT_SUCCESS(Color.GREEN.get() + "Deposit successful!" + Color.RESET.get()),
+    DEPOSIT_SUCCESS(Color.GREEN.get() + "DepositUseCase successful!" + Color.RESET.get()),
 
     /**
      * Indicates that a deposit operation has failed.
@@ -41,7 +41,7 @@ public enum AccountMessage {
     /**
      * Indicates that a withdrawal operation has been successful.
      */
-    WITHDRAWAL_SUCCESS(Color.GREEN.get() + "Withdrawal successful!" + Color.RESET.get()),
+    WITHDRAWAL_SUCCESS(Color.GREEN.get() + "WithdrawalUseCase successful!" + Color.RESET.get()),
 
     /**
      * Indicates that a withdrawal operation has failed.

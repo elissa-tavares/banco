@@ -1,11 +1,11 @@
 /**
  * This enum defines predefined messages used to prompt users for input during application interaction.
- * The messages are pre-formatted with ANSI escape codes from the {@link org.example.app.messages.colors.Color} enum
+ * The messages are pre-formatted with ANSI escape codes from the {@link org.example.application.messages.colors.Color} enum
  * to provide colored output in the console, enhancing readability.
  */
-package org.example.app.messages;
+package org.example.application.messages;
 
-import org.example.app.messages.colors.Color;
+import org.example.application.messages.colors.Color;
 
 public enum InputMessage {
 

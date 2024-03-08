@@ -1,10 +1,10 @@
 org.example
-org.example.app
-org.example.app.messages
-org.example.app.messages.colors
+org.example.application
+org.example.application.messages
+org.example.application.messages.colors
 org.example.core
 org.example.core.model
-org.example.gateway
+org.example.adapters
 org.example.infra.controller.api
 org.example.infra.controller.impl
 org.example.infra.data.base

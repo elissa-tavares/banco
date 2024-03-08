@@ -1,12 +1,12 @@
 package org.example;
 
-import org.example.service.deposit.DepositServiceClient;
-import org.example.service.open.account.OpenAccountServiceClient;
-import org.example.service.withdrawal.WithdrawalServiceClient;
-import org.example.service.deposit.DepositImpl;
-import org.example.service.open.account.OpenAccountImpl;
-import org.example.service.withdrawal.WithdrawalImpl;
-import org.example.gateway.AccountRepositoryGateway;
+import org.example.adapters.service.DepositServiceClient;
+import org.example.adapters.service.OpenAccountServiceClient;
+import org.example.adapters.service.WithdrawalServiceClient;
+import org.example.impl.deposit.DepositUseCaseImpl;
+import org.example.impl.open.OpenAccountUseCaseImpl;
+import org.example.impl.withdrawal.WithdrawalUseCaseImpl;
+import org.example.adapters.gateway.AccountRepositoryGateway;
 import org.example.infra.controller.api.Controller;
 import org.example.infra.controller.api.OperationResult;
 import org.example.infra.controller.impl.DepositControllerImpl;
@@ -43,9 +43,9 @@ public class Main {
         /**
          * Service Layer
          */
-        DepositServiceClient depositServiceClient = new DepositImpl(accountRepositoryGateway, existingAccountByNumber);
-        OpenAccountServiceClient openAnAccountServiceClient = new OpenAccountImpl(accountRepositoryGateway, existingAccountByCPF);
-        WithdrawalServiceClient withdrawalServiceClient = new WithdrawalImpl(accountRepositoryGateway, existingAccountByNumber);
+        DepositServiceClient depositServiceClient = new DepositUseCaseImpl(accountRepositoryGateway, existingAccountByNumber);
+        OpenAccountServiceClient openAnAccountServiceClient = new OpenAccountUseCaseImpl(accountRepositoryGateway, existingAccountByCPF);
+        WithdrawalServiceClient withdrawalServiceClient = new WithdrawalUseCaseImpl(accountRepositoryGateway, existingAccountByNumber);
 
         /**
          * Additional Dependencies

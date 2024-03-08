@@ -2,11 +2,11 @@
  * This interface defines the contract for performing a withdrawal operation on a bank account.
  * Classes that implement this interface are responsible for carrying out the withdrawal logic.
  */
-package org.example.core;
+package org.example.core.cases;
 
 import java.math.BigDecimal;
 
-public interface Withdrawal {
+public interface WithdrawalUseCase {
 
     /**
      * Executes a withdrawal operation, subtracting the specified value from the balance of the designated account.

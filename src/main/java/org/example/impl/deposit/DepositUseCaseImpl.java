@@ -2,15 +2,16 @@
  * This class implements the `DepositServiceClient` interface, providing a service for depositing funds
  * into an account.
  */
-package org.example.service.deposit;
+package org.example.impl.deposit;
 
+import org.example.adapters.service.DepositServiceClient;
 import org.example.core.model.Account;
-import org.example.gateway.AccountRepositoryGateway;
+import org.example.adapters.gateway.AccountRepositoryGateway;
 import org.example.security.api.ExistingAccount;
 
 import java.math.BigDecimal;
 
-public class DepositImpl implements DepositServiceClient {
+public class DepositUseCaseImpl implements DepositServiceClient {
 
     /**
      * Reference to the `AccountRepositoryGateway` for interacting with account data.
@@ -23,12 +24,12 @@ public class DepositImpl implements DepositServiceClient {
     private final ExistingAccount<Integer> existingAccountByNumber;
 
     /**
-     * Constructor for DepositImpl.
+     * Constructor for DepositUseCaseImpl.
      *
      * @param accountRepositoryGateway An instance of `AccountRepositoryGateway` for account data access.
      * @param existingAccount         An instance of `ExistingAccount` for account existence check.
      */
-    public DepositImpl(AccountRepositoryGateway accountRepositoryGateway, ExistingAccount<Integer> existingAccount) {
+    public DepositUseCaseImpl(AccountRepositoryGateway accountRepositoryGateway, ExistingAccount<Integer> existingAccount) {
         this.accountRepositoryGateway = accountRepositoryGateway;
         this.existingAccountByNumber = existingAccount;
     }
@@ -45,7 +46,7 @@ public class DepositImpl implements DepositServiceClient {
         // Check if the deposit value is positive and the account exists
         boolean existing = existingAccountByNumber.existing(accountNumber);
         if (value.compareTo(BigDecimal.ZERO) <= 0 || !existing) {
-            return false; // Deposit cannot be made with non-positive value or non-existent account
+            return false; // DepositUseCase cannot be made with non-positive value or non-existent account
         }
 
         // Retrieve the account from the data store
@@ -56,7 +57,7 @@ public class DepositImpl implements DepositServiceClient {
         account.setAccountBalance(finalBalance);
         // Optional: System.out.println(account); // For debugging or logging purposes
 
-        return true; // Deposit successful
+        return true; // DepositUseCase successful
     }
 }
 
